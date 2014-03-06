@@ -10,9 +10,8 @@ namespace UTC_Clock
     {
         static void Main(string[] args)
         {
-        
-            DigitalDisplay mydisplay = new DigitalDisplay();
             
+            DigitalDisplay mydisplay = new DigitalDisplay();
             SingletonClock.Instance.notifyObservers();
         }
     }

@@ -13,7 +13,7 @@ namespace UTC_Clock
       private DateTime myTime;
 
       private SingletonClock() {
-          myTime = DateTime.Now;//initialisierung mit system zeit
+          myTime = DateTime.Now;    //initialisierung mit system zeit
       }
 
       public DateTime getTime()

@@ -8,9 +8,6 @@ namespace UTC_Clock
 {
     public abstract class BaseDisplay
     {
-        public virtual void update(){
-            //holt sich die daten von dr uhr
-        }
-
+        public abstract void update();
     }
 }

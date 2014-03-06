@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-
-    
-    class DigitalDisplay : BaseDisplay
+    class AnalogueDisplay : BaseDisplay
     {
         private DateTime displayTime;
 
-        public DigitalDisplay()
+        public AnalogueDisplay()
         {
             SingletonClock.Instance.attach(this);
         }

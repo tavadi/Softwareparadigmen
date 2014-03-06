@@ -18,7 +18,7 @@ namespace UTC_Clock
 
         public void detach(BaseDisplay display)
          {
-             subscriberList.Remove(display);//nicht sicher wie remove funktioniert
+             subscriberList.Remove(display);
          }
 
          public void notifyObservers()

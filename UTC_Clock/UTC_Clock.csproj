@@ -41,16 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClock.cs" />
-    <Compile Include="DigitalDisplay.cs" />
-    <Compile Include="BaseDisplay.cs" />
-    <Compile Include="SingletonClock.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Clock\BaseClock.cs" />
+    <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\CmdSet.cs" />
+    <Compile Include="Display\DigitalDisplay.cs" />
+    <Compile Include="Display\BaseDisplay.cs" />
+    <Compile Include="Clock\SingletonClock.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
