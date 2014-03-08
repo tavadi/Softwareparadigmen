@@ -11,6 +11,5 @@ namespace UTC_Clock
         public abstract void undo();
         public abstract void redo();
         public abstract void help();
-       
     }
 }

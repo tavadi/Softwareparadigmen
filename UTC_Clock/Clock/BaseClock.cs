@@ -11,8 +11,9 @@ namespace UTC_Clock
         private List<BaseDisplay> subscriberList = new List<BaseDisplay>();
 
 
-        public void attach(BaseDisplay display)
+        public void attach(BaseDisplay display)//anmelden
          {
+            
              subscriberList.Add(display);
          }
 

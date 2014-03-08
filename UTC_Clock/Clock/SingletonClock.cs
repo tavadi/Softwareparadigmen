@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-    public class SingletonClock : BaseClock
+    public class SingletonClock : BaseClock //konkrete subjekt
     {
       private static SingletonClock instance;
       private DateTime myTime;
@@ -16,9 +16,19 @@ namespace UTC_Clock
           myTime = DateTime.Now;    //initialisierung mit system zeit
       }
 
-      public DateTime getTime()
+
+
+      public DateTime GetTime
       {
-          return myTime;
+          get
+          {
+              return myTime;
+          }
+
+          set
+          {
+              myTime = value;
+          }
       }
       
 

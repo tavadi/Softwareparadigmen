@@ -11,6 +11,10 @@ namespace UTC_Clock.Commands
         public override void undo() 
         { 
             Console.WriteLine("bla"); 
+            /*
+             * 
+             * 
+             * */
         }
         public override void redo() 
         { 
@@ -19,6 +23,12 @@ namespace UTC_Clock.Commands
         public override void help() 
         { 
             Console.WriteLine("bla"); 
+        }
+
+        public void set()
+        {
+
+
         }
     }
 }
