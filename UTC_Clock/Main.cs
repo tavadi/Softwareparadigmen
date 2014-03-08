@@ -9,10 +9,12 @@ namespace UTC_Clock
     class Program
     {
         static void Main(string[] args)
-        {
-            
+        {  
+            AnalogClock myForm = new AnalogClock();
+            myForm.Show();
             DigitalDisplay mydisplay = new DigitalDisplay();
             SingletonClock.Instance.notifyObservers();
+            
         }
     }
 }
