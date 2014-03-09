@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UTC_Clock
 {
@@ -10,8 +11,8 @@ namespace UTC_Clock
     {
         static void Main(string[] args)
         {  
-            AnalogClock myForm = new AnalogClock();
-            myForm.Show();
+            //AnalogClock myForm = new AnalogClock();
+           // myForm.Show();
             DigitalDisplay mydisplay = new DigitalDisplay();
             SingletonClock.Instance.notifyObservers();
             
