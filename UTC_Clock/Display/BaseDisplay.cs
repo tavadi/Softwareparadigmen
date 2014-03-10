@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-    public abstract class BaseDisplay
+    public abstract class BaseDisplay //beobachter
     {
         public abstract void update();
     }

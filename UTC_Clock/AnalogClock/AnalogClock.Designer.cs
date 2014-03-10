@@ -33,14 +33,14 @@
             // 
             // clockControl1
             // 
-            this.clockControl1.Location = new System.Drawing.Point(33, 12);
+            this.clockControl1.Location = new System.Drawing.Point(42, 3);
             this.clockControl1.Name = "clockControl1";
             this.clockControl1.ShowHourHand = true;
             this.clockControl1.ShowMajorSegments = true;
             this.clockControl1.ShowMinorSegments = true;
             this.clockControl1.ShowMinuteHand = true;
             this.clockControl1.ShowSecondhand = true;
-            this.clockControl1.Size = new System.Drawing.Size(239, 239);
+            this.clockControl1.Size = new System.Drawing.Size(302, 302);
             this.clockControl1.TabIndex = 0;
             this.clockControl1.Text = "clockControl1";
             // 
