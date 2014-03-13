@@ -1,4 +1,4 @@
-﻿namespace ClockControl
+﻿namespace UTC_Clock
 {
     partial class ClockControl
     {

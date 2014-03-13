@@ -58,6 +58,7 @@
     <Compile Include="Clock\BaseClock.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\CmdSet.cs" />
+    <Compile Include="Display\AnalogDisplay.cs" />
     <Compile Include="Display\DigitalDisplay.cs" />
     <Compile Include="Display\BaseDisplay.cs" />
     <Compile Include="Clock\SingletonClock.cs" />

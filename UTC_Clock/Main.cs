@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
 
 namespace UTC_Clock
 {
@@ -12,20 +11,13 @@ namespace UTC_Clock
     {
         static void Main(string[] args)
         {
-            AnalogClock myForm = new AnalogClock();
-            myForm.Show();
+        
+            AnalogDisplay myAnalog = new AnalogDisplay();
             Application.Run();
             DigitalDisplay mydisplay = new DigitalDisplay();
             SingletonClock.Instance.notifyObservers();
            // System.Threading.Thread.Sleep(3000);
             Console.ReadLine();
-            
-        }
-
-        public void clockstart()
-        {
-            AnalogClock myForm = new AnalogClock();
-            myForm.Show();
         }
     }
 }

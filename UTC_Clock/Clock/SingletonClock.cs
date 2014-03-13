@@ -43,5 +43,7 @@ namespace UTC_Clock
              return instance;
           }
        }
+
+        private 
     }
 }

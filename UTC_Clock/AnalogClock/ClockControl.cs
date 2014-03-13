@@ -2,14 +2,20 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ClockControl
+namespace UTC_Clock
 {
     public partial class ClockControl : Control
     {
         #region Construct the clock
 
+      
+
+        public DateTime myTime { get; set; }
+
+       
         public ClockControl()
         {
+
             InitializeComponent();
 
             //Set the double buffered to true to reduce flickering of the graphics 
@@ -36,6 +42,8 @@ namespace ClockControl
             Refresh();
         }
 
+     
+        
         /// <summary> 
         /// The timer to update the hands 
         /// </summary> 
@@ -88,17 +96,17 @@ namespace ClockControl
             //Draw only if ShowSecondHand is true 
             if (ShowSecondhand)
                 //Draw the second hand 
-                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius, DateTime.Now.Second * 6f, origin));
+                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius, myTime.Second * 6f, origin));
 
             //Draw only if ShowMinuteHand is true 
             if (ShowMinuteHand)
                 //Draw the minute hand 
-                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius * 0.75f, DateTime.Now.Minute * 6f, origin));
+                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius * 0.75f, myTime.Minute * 6f, origin));
 
             //Draw only if ShowHourHand is true 
             if (ShowHourHand)
                 //Draw the hour hand 
-                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius * 0.50f, DateTime.Now.Hour * 30f, origin));
+                pe.Graphics.DrawLine(Pens.Black, origin, PointOnCircle(radius * 0.50f, myTime.Hour * 30f, origin));
 
         }
 

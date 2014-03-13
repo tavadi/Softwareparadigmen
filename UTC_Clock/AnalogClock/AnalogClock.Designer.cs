@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.clockControl1 = new ClockControl.ClockControl();
+            this.clockControl1 = new ClockControl();
             this.SuspendLayout();
             // 
             // clockControl1
@@ -58,7 +58,7 @@
 
         #endregion
 
-        public ClockControl.ClockControl clockControl1;
+        public ClockControl clockControl1;
 
     }
 }

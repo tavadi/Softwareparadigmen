@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-    class DigitalDisplay : BaseDisplay //konkrete Beobachter
+     class AnalogDisplay : BaseDisplay
     {
+
         public DateTime displayTime;
 
-        public DigitalDisplay()
+        public AnalogDisplay()
         {
+            AnalogClock myForm = new AnalogClock();
+            myForm.Show();
+            myForm.clockControl1.myTime = SingletonClock.Instance.GetTime;
             SingletonClock.Instance.attach(this); // fragen ob das richtig ist
         }
+
         public override void update()
         {
             displayTime = SingletonClock.Instance.GetTime;
-
+            //SingletonClock.Instance.GetTime = DateTime; //setter
         }
-        
-        /*public void show()//nicht sicher(rene sagt es gehoert so )
-        {
-            //
-        }
-         * */
     }
 }
