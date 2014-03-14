@@ -26,6 +26,7 @@ namespace UTC_Clock
          {
              foreach (BaseDisplay element in subscriberList)
              {
+                 Console.WriteLine("Update");
                  element.update();
              }
          }

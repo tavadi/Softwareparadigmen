@@ -8,20 +8,17 @@ namespace UTC_Clock
 {
      class AnalogDisplay : BaseDisplay
     {
-
-        public DateTime displayTime;
-
+         private AnalogClock myForm = new AnalogClock();
         public AnalogDisplay()
         {
-            AnalogClock myForm = new AnalogClock();
+            SingletonClock.Instance.attach(this);
             myForm.Show();
-            myForm.clockControl1.myTime = SingletonClock.Instance.GetTime;
-            SingletonClock.Instance.attach(this); // fragen ob das richtig ist
         }
 
         public override void update()
         {
-            displayTime = SingletonClock.Instance.GetTime;
+            myForm.clockControl1.myTime = SingletonClock.Instance.GetTime;
+           // displayTime = SingletonClock.Instance.GetTime;
             //SingletonClock.Instance.GetTime = DateTime; //setter
         }
     }

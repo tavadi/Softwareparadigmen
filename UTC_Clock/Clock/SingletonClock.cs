@@ -3,17 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers; //ElapsedEventArgs
 
 
 namespace UTC_Clock
 {
+
     public class SingletonClock : BaseClock //konkrete subjekt
     {
       private static SingletonClock instance;
       private DateTime myTime;
+      private static System.Timers.Timer aTimer;
+      private double  AddTime;
+
+
 
       private SingletonClock() {
-          myTime = DateTime.Now;    //initialisierung mit system zeit
+         // myTime = DateTime.Now;    //initialisierung mit system zeit
+          aTimer = new System.Timers.Timer(1000);
+          aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+          aTimer.Enabled = true;
+      }
+
+      private void OnTimedEvent(object source, ElapsedEventArgs e)
+      {
+          AddTime++; //unschöne lösung
+          myTime = myTime.Date.AddSeconds(AddTime);
+          Console.WriteLine("ontimedeven: " + myTime);
+          SingletonClock.Instance.notifyObservers();
       }
 
 
@@ -44,6 +61,5 @@ namespace UTC_Clock
           }
        }
 
-        private 
     }
 }

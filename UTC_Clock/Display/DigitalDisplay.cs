@@ -12,7 +12,7 @@ namespace UTC_Clock
 
         public DigitalDisplay()
         {
-            SingletonClock.Instance.attach(this); // fragen ob das richtig ist
+            SingletonClock.Instance.attach(this);
         }
         public override void update()
         {
