@@ -4,20 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace UTC_Clock
 {
     class DigitalDisplay : BaseDisplay //konkrete Beobachter
     {
-        public DateTime displayTime;
+        private DigitalClock myForm = new DigitalClock();
 
         public DigitalDisplay()
         {
             SingletonClock.Instance.attach(this);
+            myForm.Show();
+
         }
         public override void update()
         {
-            displayTime = SingletonClock.Instance.GetTime;
-
+            myForm.myTime = SingletonClock.Instance.GetTime;
         }
         
         /*public void show()//nicht sicher(rene sagt es gehoert so )

@@ -8,7 +8,8 @@ namespace UTC_Clock
 {
      class AnalogDisplay : BaseDisplay
     {
-         private AnalogClock myForm = new AnalogClock();
+        private AnalogClock myForm = new AnalogClock();
+
         public AnalogDisplay()
         {
             SingletonClock.Instance.attach(this);

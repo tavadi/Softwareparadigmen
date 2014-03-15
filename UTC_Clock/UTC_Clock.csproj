@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -41,6 +43,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalogClock\AnalogClock.cs">
@@ -58,6 +61,12 @@
     <Compile Include="Clock\BaseClock.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\CmdSet.cs" />
+    <Compile Include="DigitalClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DigitalClock.Designer.cs">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Display\AnalogDisplay.cs" />
     <Compile Include="Display\DigitalDisplay.cs" />
     <Compile Include="Display\BaseDisplay.cs" />
@@ -71,6 +80,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AnalogClock\AnalogClock.resx">
       <DependentUpon>AnalogClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DigitalClock.resx">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

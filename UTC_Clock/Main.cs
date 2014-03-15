@@ -10,21 +10,13 @@ namespace UTC_Clock
 {
     class Program
     {
-
-     
-
-
         static void Main(string[] args)
         {
-
-          AnalogDisplay myAnalog = new AnalogDisplay();
-           
-            //DigitalDisplay mydisplay = new DigitalDisplay();
-         //   Console.WriteLine("test");
-                  SingletonClock.Instance.notifyObservers();
-           // System.Threading.Thread.Sleep(3000);
-          //  Console.ReadLine();
-           Application.Run();
+        AnalogDisplay myAnalog = new AnalogDisplay();
+        DigitalDisplay mydisplay = new DigitalDisplay();
+        SingletonClock.Instance.notifyObservers();
+        //Console.ReadLine();
+        Application.Run();
         }
     }
 }
