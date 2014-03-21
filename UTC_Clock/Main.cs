@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using System.Threading;
 
 namespace UTC_Clock
 {
@@ -12,11 +13,11 @@ namespace UTC_Clock
     {
         static void Main(string[] args)
         {
-        AnalogDisplay myAnalog = new AnalogDisplay();
-        DigitalDisplay mydisplay = new DigitalDisplay();
-        SingletonClock.Instance.notifyObservers();
-        //Console.ReadLine();
-        Application.Run();
+            InputForm myInputForm = new InputForm();
+            myInputForm.Show();
+            AnalogDisplay myAnalog = new AnalogDisplay();
+            DigitalDisplay mydisplay = new DigitalDisplay();
+            Application.Run();
         }
     }
 }

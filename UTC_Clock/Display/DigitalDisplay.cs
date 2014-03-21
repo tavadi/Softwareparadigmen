@@ -19,10 +19,10 @@ namespace UTC_Clock
         }
         public override void update()
         {
-            myForm.myTime = SingletonClock.Instance.GetTime;
+           myForm.myTime = SingletonClock.Instance.GetTime;
         }
         
-        /*public void show()//nicht sicher(rene sagt es gehoert so )
+        /*public void show()
         {
             //
         }

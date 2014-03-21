@@ -8,8 +8,7 @@ namespace UTC_Clock
 {
     public abstract class BaseCommand
     {
-        public abstract void undo();
-        public abstract void redo();
-        public abstract void help();
+        public abstract void Execute();
+
     }
 }
