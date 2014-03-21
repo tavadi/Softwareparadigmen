@@ -15,6 +15,7 @@ namespace UTC_Clock
 
         public override void Execute()
         {
+            Console.WriteLine("SETCMD");
         }
     }
 }

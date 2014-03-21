@@ -22,14 +22,15 @@ namespace UTC_Clock
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            BaseCommand myCommandObj;
             if (e.KeyCode == Keys.Enter)
             {
-               Command myCommand = new Command(textBox1.Text);
-               switch (myCommand.myCommand)
+            BaseCommand myCommandObj = null;
+            Command myCommand = new Command(textBox1.Text);
+       
+             
+               switch (myCommand.commandType)
                {
                    case "set":
-                       Console.WriteLine("set beging executed");
                        myCommandObj = new CmdSet();
                        break;
                    case "help":
@@ -47,6 +48,7 @@ namespace UTC_Clock
                    default:
                        break;
                }
+               myCommandObj.Execute();
             }
         }
     }

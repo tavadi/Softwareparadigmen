@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-    interface BaseCommand
+    class CmdDec : BaseCommand
     {
-        public abstract void Execute();
-
+        public void Execute()
+        {
+        }
     }
 }

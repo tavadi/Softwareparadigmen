@@ -8,18 +8,18 @@ namespace UTC_Clock
 {
     class Command
     {
-        public string myCommand { get; set; }
-        public string commandType;
-
-        Dictionary<string, int> dictionary =  new Dictionary<string, int>();
-        public Invoker invoky;
+        public string commandType { get; set; }
+        public Dictionary<string, string> parameter = new Dictionary<string, string>();      
         public Command(string newCommand)
         {
-            myCommand = newCommand;
-            string[] splitted = myCommand.Split();
+            commandType = newCommand;
+            string[] splitted = commandType.Split();
             commandType = splitted[0];
             Console.WriteLine(commandType);
-           
+                for (int i = 1; i < splitted.Length; i += 2)
+                {
+                    parameter.Add(splitted[i], splitted[i + 1]);
+                }
         }
      
 

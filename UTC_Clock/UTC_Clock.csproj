@@ -59,6 +59,9 @@
       <DependentUpon>ClockControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Clock\BaseClock.cs" />
+    <Compile Include="Commands\CmdDec.cs" />
+    <Compile Include="Commands\CmdInc.cs" />
+    <Compile Include="Commands\CmdShow.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\CmdSet.cs" />
@@ -78,7 +81,6 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoker.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
