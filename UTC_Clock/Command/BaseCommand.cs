@@ -8,7 +8,6 @@ namespace UTC_Clock
 {
     interface BaseCommand
     {
-        public abstract void Execute();
-
+         void Execute();
     }
 }

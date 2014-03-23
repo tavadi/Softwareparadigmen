@@ -19,7 +19,7 @@ namespace UTC_Clock
 
 
       private SingletonClock() {
-          //myTime = DateTime.Now;    //initialisierung mit system zeit
+          myTime = DateTime.Now;    //initialisierung mit system zeit
           aTimer = new System.Timers.Timer(1000);
           aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
           aTimer.Enabled = true;
@@ -27,8 +27,8 @@ namespace UTC_Clock
 
       private void OnTimedEvent(object source, ElapsedEventArgs e)
       {
-          AddTime++; 
-          myTime = myTime.Date.AddSeconds(AddTime);
+         // Console.WriteLine("mytime update: " + myTime);
+          myTime += TimeSpan.Parse("00:00:01"); //fügt jede sekunde eine sekunde hinzu
          // Console.WriteLine("ontimedeven: " + myTime);
           SingletonClock.Instance.notifyObservers();
       }

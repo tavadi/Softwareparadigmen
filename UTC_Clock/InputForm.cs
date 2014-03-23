@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace UTC_Clock
 {
-    public partial class InputForm : Form
+    public partial class InputForm : Form // INVOKER
     {
 
-        
+        private List<BaseCommand> _commands = new List<BaseCommand>();
         public InputForm()
         {
-
             InitializeComponent();
         }
 
@@ -26,7 +25,6 @@ namespace UTC_Clock
             {
             BaseCommand myCommandObj = null;
             Command myCommand = new Command(textBox1.Text);
-       
              
                switch (myCommand.commandType)
                {
@@ -34,20 +32,27 @@ namespace UTC_Clock
                        myCommandObj = new CmdSet();
                        break;
                    case "help":
+                       myCommandObj = new CmdHelp();
                        break;
                    case "dec":
+                       myCommandObj = new CmdDec();
                        break;
                    case "inc":
+                       myCommandObj = new CmdInc();
                        break;
                    case "undo":
+                       Console.WriteLine("undoing not implemented yet");
                        break;
                    case "redo":
+                       Console.WriteLine("redoing not implemented yet");
                        break;
                    case "show":
+                       myCommandObj = new CmdSet();
                        break;
                    default:
                        break;
                }
+               _commands.Add(myCommandObj);
                myCommandObj.Execute();
             }
         }

@@ -9,11 +9,7 @@ namespace UTC_Clock
     class CmdSet : BaseCommand
     {
 
-        public CmdSet()
-        {
-        }
-
-        public override void Execute()
+        public void Execute()
         {
             Console.WriteLine("SETCMD");
         }
