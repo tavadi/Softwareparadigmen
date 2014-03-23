@@ -8,9 +8,8 @@ namespace UTC_Clock
 {
     class CmdShow : BaseCommand
     {
-        public void Execute()
+        public void Execute(Command cmd)
         {
-            throw new NotImplementedException();
         }
     }
 }

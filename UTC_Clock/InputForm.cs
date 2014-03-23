@@ -13,7 +13,7 @@ namespace UTC_Clock
     public partial class InputForm : Form // INVOKER
     {
 
-        private List<BaseCommand> _commands = new List<BaseCommand>();
+        private List<BaseCommand> _commandHistory = new List<BaseCommand>();
         public InputForm()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace UTC_Clock
                        myCommandObj = new CmdHelp();
                        break;
                    case "dec":
-                       myCommandObj = new CmdDec();
+                       myCommandObj = new CmdDec(SingletonClock.Instance);
                        break;
                    case "inc":
                        myCommandObj = new CmdInc();
@@ -52,8 +52,8 @@ namespace UTC_Clock
                    default:
                        break;
                }
-               _commands.Add(myCommandObj);
-               myCommandObj.Execute();
+               _commandHistory.Add(myCommandObj);
+               myCommandObj.Execute(myCommand);
             }
         }
     }

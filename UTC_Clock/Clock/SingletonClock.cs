@@ -64,5 +64,31 @@ namespace UTC_Clock
           }
        }
 
+      public void Decrease(Command cmd) // dec {–h} {–m} {–s}
+      {
+         /* foreach (KeyValuePair<string,string> pair in cmd.parameter)
+          {
+              Console.WriteLine(" Key : " + pair.Key + " Value : " + pair.Value);
+          }*/
+          foreach(var item in cmd.parameter)
+          {
+              switch (item)
+              {
+                  case "-h":
+                      myTime -= TimeSpan.Parse("01:00:00");
+                      break;
+                  case "-m":
+                      myTime -= TimeSpan.Parse("00:01:00");
+                      break;
+                  case "-s":
+                      myTime -= TimeSpan.Parse("00:00:01");
+                      break;
+                  default:
+                      break;
+              }
+
+          }
+      }
+
     }
 }

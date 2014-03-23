@@ -8,8 +8,15 @@ namespace UTC_Clock
 {
     class CmdDec : BaseCommand
     {
-        public void Execute()
+        private SingletonClock _clock;
+
+        public CmdDec(SingletonClock receiver)
         {
+            _clock = receiver;
+        }
+        public void Execute(Command cmd)
+        {
+            _clock.Decrease(cmd);
         }
     }
 }

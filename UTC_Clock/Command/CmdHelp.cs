@@ -10,7 +10,7 @@ namespace UTC_Clock
     class CmdHelp : BaseCommand
     {
 
-        public void Execute()
+        public void Execute(Command cmd)
         {
             MessageBox.Show(@"set {–h <hour>} {-m <minutes>} {-s <seconds>} setzt die Werte der Uhr inc {–h} {–m} {–s} Incrementiert Stunde, Minute, Sekunde – können 
             optional in beliebiger Reihenfolge angegeben werden 
