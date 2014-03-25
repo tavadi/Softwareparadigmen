@@ -9,5 +9,8 @@ namespace UTC_Clock
     public abstract class BaseDisplay //beobachter
     {
         public abstract void update();
+        public abstract void show(Command cmd);
+
+      
     }
 }

@@ -14,8 +14,6 @@ namespace UTC_Clock
       private static SingletonClock instance;
       private DateTime myTime;
       private static System.Timers.Timer aTimer;
-      private double  AddTime;
-
 
 
       private SingletonClock() {
@@ -90,5 +88,42 @@ namespace UTC_Clock
           }
       }
 
+      public void Increase(Command cmd) // dec {–h} {–m} {–s}
+      {
+
+          foreach (var item in cmd.parameter)
+          {
+              switch (item)
+              {
+                  case "-h":
+                      myTime += TimeSpan.Parse("01:00:00");
+                      break;
+                  case "-m":
+                      myTime += TimeSpan.Parse("00:01:00");
+                      break;
+                  case "-s":
+                      myTime += TimeSpan.Parse("00:00:01");
+                      break;
+                  default:
+                      break;
+              }
+
+          }
+      }
+
+
+      public void Set(Command cmd)
+      {
+          /*     for (int i = 0; i < cmd.parameter.Count; i++)
+               {
+                   if(cmd.parameter[i] == "-h")
+               }
+           */
+      }
+           
+    
+
+
     }
+     
 }

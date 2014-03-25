@@ -21,11 +21,11 @@ namespace UTC_Clock
         {
            myForm.myTime = SingletonClock.Instance.GetTime;
         }
-        
-        /*public void show()
+
+        public override void show(Command cmd)
         {
-            //
+            
         }
-         * */
+         
     }
 }

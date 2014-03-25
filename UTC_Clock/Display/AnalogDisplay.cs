@@ -22,5 +22,10 @@ namespace UTC_Clock
            // displayTime = SingletonClock.Instance.GetTime;
             //SingletonClock.Instance.GetTime = DateTime; //setter
         }
+
+        public override void show(Command cmd)
+        {
+
+        }
     }
 }

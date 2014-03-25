@@ -29,7 +29,7 @@ namespace UTC_Clock
                switch (myCommand.commandType)
                {
                    case "set":
-                       myCommandObj = new CmdSet();
+                       myCommandObj = new CmdSet(SingletonClock.Instance);
                        break;
                    case "help":
                        myCommandObj = new CmdHelp();
@@ -38,7 +38,7 @@ namespace UTC_Clock
                        myCommandObj = new CmdDec(SingletonClock.Instance);
                        break;
                    case "inc":
-                       myCommandObj = new CmdInc();
+                       myCommandObj = new CmdInc(SingletonClock.Instance);
                        break;
                    case "undo":
                        Console.WriteLine("undoing not implemented yet");
@@ -47,7 +47,7 @@ namespace UTC_Clock
                        Console.WriteLine("redoing not implemented yet");
                        break;
                    case "show":
-                       myCommandObj = new CmdSet();
+                      // myCommandObj = new CmdShow(BaseDisplay receiver);
                        break;
                    default:
                        break;

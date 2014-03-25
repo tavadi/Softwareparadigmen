@@ -8,10 +8,15 @@ namespace UTC_Clock
 {
     class CmdSet : BaseCommand
     {
+        private SingletonClock _clock;
 
+        public CmdSet(SingletonClock receiver)
+        {
+            _clock = receiver;
+        }
         public void Execute(Command cmd)
         {
-            Console.WriteLine("SETCMD");
+            _clock.Set(cmd);
         }
     }
 }
