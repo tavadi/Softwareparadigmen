@@ -31,10 +31,7 @@ namespace UTC_Clock
           SingletonClock.Instance.notifyObservers();
       }
 
-      public void Set()
-      {
-          Console.WriteLine("set");
-      }
+
 
       public DateTime GetTime
       {
@@ -114,10 +111,45 @@ namespace UTC_Clock
 
       public void Set(Command cmd)
       {
-          /*     for (int i = 0; i < cmd.parameter.Count; i++)
-               {
-                   if(cmd.parameter[i] == "-h")
-               }
+          try
+          {
+              if (cmd.parameter.Count % 2 == 0)
+              {
+                  for (int i = 0; i < cmd.parameter.Count; i++)
+                  {
+                      switch (cmd.parameter[i])
+                      {
+                          case "-h":
+                              Console.WriteLine("-h");
+                              int hour = Convert.ToInt32(cmd.parameter[i + 1]);
+                              myTime = new DateTime(myTime.Year, myTime.Month, myTime.Day, hour, myTime.Minute, myTime.Second);
+                              Console.WriteLine(hour);
+                              break;
+                          case "-m":
+                              Console.WriteLine("-m" + cmd.parameter[i + 1]);
+                              int minute = Convert.ToInt32(cmd.parameter[i + 1]);
+                              myTime = new DateTime(myTime.Year, myTime.Month, myTime.Day, myTime.Hour, minute, myTime.Second);
+                              break;
+                          case "-s":
+                              Console.WriteLine("-s" + cmd.parameter[i + 1]);
+                              int second = Convert.ToInt32(cmd.parameter[i + 1]);
+                              myTime = new DateTime(myTime.Year, myTime.Month, myTime.Day, myTime.Hour, myTime.Minute, second);
+                              break;
+                          default:
+                              break;
+                      }
+                  }
+              }
+              else
+              {
+                  //error wrong paramter 
+                  Console.WriteLine("wrong poaramter");
+              }
+          }
+          catch (FormatException e)
+          {
+              Console.WriteLine("wrong input format");
+          }/*    
            */
       }
            
