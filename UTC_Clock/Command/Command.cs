@@ -31,5 +31,9 @@ namespace UTC_Clock
                 }
             }
           }
+
+        public Command(List<Command> commandParamterHistory)
+        {
+        }
     }
 }
