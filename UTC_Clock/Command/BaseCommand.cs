@@ -9,5 +9,7 @@ namespace UTC_Clock
     interface BaseCommand
     {
         void Execute(Command cmd);
+
+        void Undo(Command cmd);
     }
 }

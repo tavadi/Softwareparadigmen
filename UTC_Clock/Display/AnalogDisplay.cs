@@ -13,7 +13,12 @@ namespace UTC_Clock
         public AnalogDisplay()
         {
             SingletonClock.Instance.attach(this);
-            myForm.Show();
+           
+        }
+
+        ~AnalogDisplay()
+        {
+            this.exit();
         }
 
         public override void update()
@@ -23,9 +28,15 @@ namespace UTC_Clock
             //SingletonClock.Instance.GetTime = DateTime; //setter
         }
 
-        public override void show(Command cmd)
+        public override void show()
         {
+            myForm.Show();
+        }
 
+        public override void exit()
+        {
+            myForm.Close();
+            SingletonClock.Instance.detach(this);
         }
     }
 }

@@ -46,7 +46,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\CmdUndo.cs" />
+    <Compile Include="Command\CmdShow.cs" />
     <Compile Include="Display\ClockDesign\AnalogClock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,10 +60,8 @@
       <DependentUpon>ClockControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Clock\BaseClock.cs" />
-    <Compile Include="Command\CmdHelp.cs" />
     <Compile Include="Command\CmdDec.cs" />
     <Compile Include="Command\CmdInc.cs" />
-    <Compile Include="Command\CmdShow.cs" />
     <Compile Include="Command\Command.cs" />
     <Compile Include="Command\BaseCommand.cs" />
     <Compile Include="Command\CmdSet.cs" />
@@ -83,6 +81,7 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoker.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,8 +15,8 @@ namespace UTC_Clock
         {
             InputForm myInputForm = new InputForm();
             myInputForm.Show();
-            AnalogDisplay myAnalog = new AnalogDisplay();
-            DigitalDisplay mydisplay = new DigitalDisplay();
+           // DigitalDisplay mydisplay = new DigitalDisplay();
+            //AnalogDisplay myAnalog = new AnalogDisplay();
             Application.Run();
         }
     }

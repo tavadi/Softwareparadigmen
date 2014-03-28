@@ -18,5 +18,11 @@ namespace UTC_Clock
         {
             _clock.Decrease(cmd);
         }
+
+
+        public void Undo(Command cmd)
+        {
+            _clock.Increase(cmd);
+        }
     }
 }

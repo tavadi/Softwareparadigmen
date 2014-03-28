@@ -8,15 +8,21 @@ namespace UTC_Clock
 {
     class CmdShow : BaseCommand
     {
-        private BaseDisplay _display;
+        private BaseDisplay _myDisplay = null;
 
         public CmdShow(BaseDisplay receiver)
         {
-            _display = receiver;
+            _myDisplay = receiver;
         }
+
         public void Execute(Command cmd)
         {
-           // _display.Show(cmd);
+            _myDisplay.show();
+        }
+
+        public void Undo(Command cmd)
+        {
+            _myDisplay.exit();
         }
     }
 }

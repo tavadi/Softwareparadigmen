@@ -14,18 +14,27 @@ namespace UTC_Clock
         public DigitalDisplay()
         {
             SingletonClock.Instance.attach(this);
-            myForm.Show();
-
         }
+
+       
+        ~DigitalDisplay()
+        {
+            this.exit();
+        }
+
         public override void update()
         {
            myForm.myTime = SingletonClock.Instance.GetTime;
         }
 
-        public override void show(Command cmd)
+        public override void show()
         {
-            
+            myForm.Show();
         }
-         
+
+        public override void exit()
+        {
+            myForm.Close();
+        }
     }
 }
