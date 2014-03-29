@@ -8,6 +8,7 @@ namespace UTC_Clock
 {
     class CmdDec : BaseCommand
     {
+        #region Command Pattern Logic
         private SingletonClock _clock;
 
         public CmdDec(SingletonClock receiver)
@@ -24,5 +25,6 @@ namespace UTC_Clock
         {
             _clock.Increase(cmd);
         }
+        #endregion
     }
 }

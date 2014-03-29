@@ -8,6 +8,7 @@ namespace UTC_Clock
 {
     class CmdInc : BaseCommand
     {
+        #region Command Pattern Logic
         private SingletonClock _clock;
 
         public CmdInc(SingletonClock receiver)
@@ -24,5 +25,6 @@ namespace UTC_Clock
         {
             _clock.Decrease(cmd);
         }
+        #endregion
     }
 }

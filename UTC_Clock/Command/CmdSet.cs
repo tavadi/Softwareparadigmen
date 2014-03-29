@@ -8,6 +8,7 @@ namespace UTC_Clock
 {
     class CmdSet : BaseCommand
     {
+        #region Command Pattern Logic
         private SingletonClock _clock;
 
         public CmdSet(SingletonClock receiver)
@@ -24,5 +25,6 @@ namespace UTC_Clock
         {
             _clock.undoSet();
         }
+        #endregion
     }
 }

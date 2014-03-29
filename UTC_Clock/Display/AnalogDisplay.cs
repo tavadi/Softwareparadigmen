@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-     class AnalogDisplay : BaseDisplay
+    class AnalogDisplay : BaseDisplay   //konkrete Beobachter
     {
         private AnalogClock myForm = new AnalogClock();
 

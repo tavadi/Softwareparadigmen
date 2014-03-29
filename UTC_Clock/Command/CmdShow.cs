@@ -8,12 +8,15 @@ namespace UTC_Clock
 {
     class CmdShow : BaseCommand
     {
+        #region Command Pattern Logic
         private BaseDisplay _myDisplay = null;
 
+     
         public CmdShow(BaseDisplay receiver)
         {
             _myDisplay = receiver;
         }
+       
 
         public void Execute(Command cmd)
         {
@@ -24,5 +27,6 @@ namespace UTC_Clock
         {
             _myDisplay.exit();
         }
+        #endregion
     }
 }

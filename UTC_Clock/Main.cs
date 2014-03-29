@@ -13,10 +13,15 @@ namespace UTC_Clock
     {
         static void Main(string[] args)
         {
+            //Erstellt Inputform
             InputForm myInputForm = new InputForm();
             myInputForm.Show();
-           // DigitalDisplay mydisplay = new DigitalDisplay();
-            //AnalogDisplay myAnalog = new AnalogDisplay();
+            #region Debug
+            DigitalDisplay mydisplay = new DigitalDisplay();
+            // AnalogDisplay myAnalog = new AnalogDisplay();
+            // myAnalog.show();
+            // mydisplay.show();
+            #endregion
             Application.Run();
         }
     }

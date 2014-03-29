@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UTC_Clock
-{
+{   //Erstellt Paramter für Command
     public class Command //Splitted Form Input und holt sich die nötigen Paramter
     {
         public  bool undoBool = false; //wurde das objekt schon undo´t
-        public string commandType { get; set; }
+        public string commandType { get; set; } // typ des Befehls(Set,Inc,Dec,Show...)
         public List<string> parameter = new List<string>();
 
         public Command(string newCommand)
@@ -22,7 +22,7 @@ namespace UTC_Clock
             {
                 if (e != splitted[0])
                 {
-                    parameter.Add(e);
+                    parameter.Add(e); //Fügt Paramter einer Liste hinzu
                 }
             }
         }

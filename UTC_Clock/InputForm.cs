@@ -25,6 +25,7 @@ namespace UTC_Clock
         {
             if (e.KeyCode == Keys.Enter)
             {
+                //Immer wenn Enter gedrückt wurde, schicke Befehl an Invoker und führe den Befehl aus
                 myInvoker.StoreAndExecute(textBox1.Text);
             }
         }

@@ -6,29 +6,34 @@ using System.Threading.Tasks;
 
 namespace UTC_Clock
 {
-    public abstract class BaseClock 
+
+    public abstract class BaseClock
     {
+        #region Observer Pattern
         private List<BaseDisplay> subscriberList = new List<BaseDisplay>();
 
+        //Speichert Subscriber in die Liste
+        public void attach(BaseDisplay display)
+        {
+            subscriberList.Add(display);
+        }
 
-        public void attach(BaseDisplay display)//anmelden
-         {
-            
-             subscriberList.Add(display);
-         }
 
+        //Löscht Subscriber aus der Liste
         public void detach(BaseDisplay display)
-         {
-             subscriberList.Remove(display);
-         }
+        {
+            subscriberList.Remove(display);
+        }
 
-         public void notifyObservers()
-         {
-             foreach (BaseDisplay element in subscriberList)
-             {
-                // Console.WriteLine("Update");
-                 element.update();
-             }
-         }
+        
+        public void notifyObservers()
+        {
+            foreach (BaseDisplay element in subscriberList)
+            {
+                //Ruft bei jedem Subscriper Update auf
+                element.update();
+            }
+        }
+        #endregion
     }
 }
