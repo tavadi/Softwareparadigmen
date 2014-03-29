@@ -52,6 +52,7 @@
             this.Controls.Add(this.clockControl1);
             this.Name = "AnalogClock";
             this.Text = "AnalogClock";
+            this.Load += new System.EventHandler(this.positioning);
             this.ResumeLayout(false);
 
         }

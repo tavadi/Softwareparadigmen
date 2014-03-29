@@ -17,21 +17,28 @@ namespace UTC_Clock
     {
 
         public DateTime myTime { get; set; }
+        private int myTimeZone = 0;
+        private int myPosX;
+        private int myPosY;
 
-       
-        public DigitalClock()
+
+        public DigitalClock(int x,int y,int timeZone)
         {
             InitializeComponent();
+            myTimeZone = timeZone;
             myTimer.Tick += ClockTimer_Tick;
             myTimer.Enabled = true;
             myTimer.Interval = 1;
             myTimer.Start();
+            myPosX = x;
+            myPosY = y;
            
         }
 
 
         private void ClockTimer_Tick(object sender, EventArgs e)
         {
+            
             label1.Text = myTime.ToString("hh-mm-ss");
             Refresh();
         }
@@ -51,6 +58,8 @@ namespace UTC_Clock
         private void DigitalClock_Load(object sender, EventArgs e)
         {
             label1.AutoSize = true;
+            this.Top = myPosX;
+            this.Left = myPosY;
         }
     }
 }

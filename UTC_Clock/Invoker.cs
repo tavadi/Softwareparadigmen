@@ -68,7 +68,8 @@ namespace UTC_Clock
                     break;
                 case "redo":
                     #region redo
-                    //wiederholt den letzten Befehl                    if (cmdHistory[cmdHistory.Count - 1] != null)
+                    //wiederholt den letzten Befehl
+                    if (cmdHistory[cmdHistory.Count - 1] != null)
                     {
                         switch (cmdHistory[cmdHistory.Count - 1].commandType)
                         {
@@ -97,10 +98,10 @@ namespace UTC_Clock
                         switch (item)
                         {
                             case "analog":
-                                myDisplay = new AnalogDisplay();
+                                myDisplay = new AnalogDisplay(myCommand);
                                 break;
                             case "digital":
-                                myDisplay = new DigitalDisplay();
+                                myDisplay = new DigitalDisplay(myCommand);
                                 break;
                             default:
                                 break;
