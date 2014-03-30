@@ -14,12 +14,14 @@ namespace UTC_Clock
         {
             //Input aus der Konsole
             string myCommandText = commandText;
-         
+
             //Erstellt aus Konsoleneingabe die Parameter für Command
             Command myCommand = new Command(myCommandText);
             //Objekt zum erstellen von Cmd
             BaseCommand myCommandObj = null;
             //Erstellt konkretes Cmd Objekt
+
+            BaseDisplay myDisplay = null;
             switch (myCommand.commandType)
             {
                 #region create myCommandObj
@@ -54,9 +56,8 @@ namespace UTC_Clock
                                     myCommandObj = new CmdInc(SingletonClock.Instance);
                                     break;
                                 case "show":
-                                //not implemented yet
-                                case "undo":
-                                    break;
+                                    myCommandObj = new CmdShow(SingletonClock.Instance.subscriberList[SingletonClock.Instance.subscriberList.Count - 1]);
+                                    break; ;
                             }
                             //Command wurde undo´t
                             cmdHistory[i - 1].undoBool = true;
@@ -82,9 +83,31 @@ namespace UTC_Clock
                             case "inc":
                                 myCommandObj = new CmdInc(SingletonClock.Instance);
                                 break;
+                            case "show":
+                                foreach (var item in cmdHistory[cmdHistory.Count - 1].parameter)
+                                {
+                                    switch (item)
+                                    {
+                                        case "analog":
+                                            myDisplay = new AnalogDisplay(myCommand);
+
+                                            break;
+                                        case "digital":
+                                            myDisplay = new DigitalDisplay(myCommand);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                                myCommandObj = new CmdShow(myDisplay);
+                                break;
+
                         }
                         //oder macht das letzte undo wieder rückgängig 
                         cmdHistory[cmdHistory.Count - 1].undoBool = false;
+                        //klont den letzten cmd
+                        Command redoCommand = (Command)cmdHistory[cmdHistory.Count - 1].Clone();
+                        cmdHistory.Add(redoCommand);
                         myCommandObj.Execute(cmdHistory[cmdHistory.Count - 1]);
                     }
                     #endregion
@@ -92,13 +115,13 @@ namespace UTC_Clock
                 case "show":
                     #region show
                     //erstellt ein Objekt BaseDisplay zum übergeben an CmdShow
-                    BaseDisplay myDisplay = null;
                     foreach (var item in myCommand.parameter)
                     {
                         switch (item)
                         {
                             case "analog":
                                 myDisplay = new AnalogDisplay(myCommand);
+
                                 break;
                             case "digital":
                                 myDisplay = new DigitalDisplay(myCommand);
@@ -108,7 +131,6 @@ namespace UTC_Clock
                         }
                     }
                     myCommandObj = new CmdShow(myDisplay);
-
                     break;
                     #endregion
                 default:

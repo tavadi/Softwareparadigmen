@@ -10,7 +10,7 @@ namespace UTC_Clock
     public abstract class BaseClock
     {
         #region Observer Pattern
-        private List<BaseDisplay> subscriberList = new List<BaseDisplay>();
+        public List<BaseDisplay> subscriberList = new List<BaseDisplay>();
 
         //Speichert Subscriber in die Liste
         public void attach(BaseDisplay display)
@@ -35,5 +35,7 @@ namespace UTC_Clock
             }
         }
         #endregion
+
+
     }
 }

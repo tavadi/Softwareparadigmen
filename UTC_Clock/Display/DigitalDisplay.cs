@@ -61,6 +61,7 @@ namespace UTC_Clock
         public override void exit()
         {
            myForm.Close();
+           SingletonClock.Instance.detach(this);
         }
     }
 }
