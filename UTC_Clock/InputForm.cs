@@ -17,15 +17,17 @@ namespace UTC_Clock
         public InputForm()
         {
             InitializeComponent();
+            //Erstellt neuen Invoker
             myInvoker = new Invoker();
 
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
+            //Immer wenn Enter gedrückt wurde
             if (e.KeyCode == Keys.Enter)
             {
-                //Immer wenn Enter gedrückt wurde, schicke Befehl an Invoker und führe den Befehl aus
+                //schicke Befehl an Invoker und führe den Befehl aus
                 myInvoker.StoreAndExecute(textBox1.Text);
             }
         }

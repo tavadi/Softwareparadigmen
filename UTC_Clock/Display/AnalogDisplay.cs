@@ -17,29 +17,31 @@ namespace UTC_Clock
 
         public AnalogDisplay(Command myCommandObj)
         {
-           
-            myCmd = myCommandObj;
-            for (int i = 0; i < myCmd.parameter.Count; i++)
-            {
-                switch (myCmd.parameter[i])
+          
+                myCmd = myCommandObj;
+                for (int i = 0; i < myCmd.parameter.Count; i++)
                 {
-                    case "-z":
-                        myTimeZone = Convert.ToInt32(myCmd.parameter[i + 1]);
-                        break;
-                    case "-x":
-                        myPosX = Convert.ToInt32(myCmd.parameter[i + 1]);
-                        break;
-                    case "-y":
-                        myPosY = Convert.ToInt32(myCmd.parameter[i + 1]);
-                        break;
-                    default:
-                        break;
+                    switch (myCmd.parameter[i])
+                    {
+                        case "-z":
+                            myTimeZone = Convert.ToInt32(myCmd.parameter[i + 1]);
+                            break;
+                        case "-x":
+                            myPosX = Convert.ToInt32(myCmd.parameter[i + 1]);
+                            break;
+                        case "-y":
+                            myPosY = Convert.ToInt32(myCmd.parameter[i + 1]);
+                            break;
+                        default:
+                            break;
+                    }
                 }
-            }
-            Console.WriteLine("posX: " + myPosX + " posY: " + myPosY);
-            myForm = new AnalogClock(myPosX, myPosY);
-            SingletonClock.Instance.attach(this);
-            Console.WriteLine("myTimezone" + myTimeZone);
+                Console.WriteLine("posX: " + myPosX + " posY: " + myPosY);
+                myForm = new AnalogClock(myPosX, myPosY);
+                SingletonClock.Instance.attach(this);
+                Console.WriteLine("myTimezone" + myTimeZone);
+       
+            
         }
 
    

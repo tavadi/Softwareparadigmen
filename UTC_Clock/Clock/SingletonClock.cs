@@ -72,6 +72,7 @@ namespace UTC_Clock
             }
         }
 
+
         public void Decrease(Command cmd) // dec {–h} {–m} {–s}
         {
             foreach (var item in cmd.parameter)
@@ -95,6 +96,7 @@ namespace UTC_Clock
                 }
             }
         }
+
 
         public void Increase(Command cmd) // dec {–h} {–m} {–s}
         {
@@ -164,36 +166,35 @@ namespace UTC_Clock
                 }
                 else
                 {
-                    //Error wrong paramter 
                     MessageBox.Show("Paramter only in pair of twos! <set -h 20>");
                 }
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
-                MessageBox.Show("Wrong Input Format! Type help");
+                MessageBox.Show("Wrong Input Format! Type Help!");
+                Console.WriteLine(e);
             }
         }
-
-
 
 
         public void undoSet()
         {
             try
             {
-
+                //holt sich die letzte Zeitdifferenz
                 TimeSpan difference = CmdSetHistory[0];
-                Console.WriteLine("timespan: " + difference);
+                //Console.WriteLine("timespan: " + difference);
+                //zieht sie davon ab
                 myTime -= difference;
+                //und löscht die Differenz aus der liste
                 CmdSetHistory.Remove(difference);
             }
             catch (Exception e)
             {
-                MessageBox.Show("Undo not possible!" + e);
+                MessageBox.Show("I can not undo this set command, maybe wrong parameters!");
+                Console.WriteLine(e);
             }
         }
-
-
 
     }
 

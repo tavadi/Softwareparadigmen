@@ -12,10 +12,6 @@ namespace UTC_Clock
         public string commandType { get; set; } // typ des Befehls(Set,Inc,Dec,Show...)
         public List<string> parameter = new List<string>();
 
-        public Command()
-        {
-
-        }
 
         public Command(string newCommand)
         {
@@ -31,6 +27,8 @@ namespace UTC_Clock
                 }
             }
         }
+
+
         //klont sich selber für redo command
         public object Clone()
         {
